@@ -14,3 +14,10 @@ alias gc='git commit -m'
 alias gpl='git pull'
 alias gps='git push'
 alias gs='git status'
+
+#tailscale
+alias ts='tailscale'
+alias tsu='sudo tailscale up'
+alias tsd='sudo tailscale down'
+alias tsen='sudo tailscale set --exit-node=100.89.118.43'
+alias tsud='sudo tailscale update'
