@@ -21,3 +21,8 @@ alias tsu='sudo tailscale up'
 alias tsd='sudo tailscale down'
 alias tsen='sudo tailscale set --exit-node=100.89.118.43'
 alias tsud='sudo tailscale update'
+
+#ssh 
+alias spve='ssh 192.168.0.157'
+alias spve1='ssh 192.168.0.23'
+alias media='ssh 192.168.0.102'
