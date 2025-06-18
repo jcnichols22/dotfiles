@@ -14,6 +14,7 @@ alias gc='git commit -m'
 alias gpl='git pull'
 alias gps='git push'
 alias gs='git status'
+alias pullans='/home/josh/Documents/code/Ansible'
 
 #tailscale
 alias ts='tailscale'
