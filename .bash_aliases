@@ -17,6 +17,7 @@ alias gs='git status'
 alias pullans='/home/josh/Documents/code/Ansible'
 
 #tailscale
+alias tsi='curl -fsSL https://tailscale.com/install.sh | sh'
 alias ts='tailscale'
 alias tsu='sudo tailscale up'
 alias tsd='sudo tailscale down'
