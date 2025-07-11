@@ -7,17 +7,19 @@ alias cls='clear'
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y'
 
 #system information
-alias sinfo='echo "System Information:" && \
-echo "-------------------" && \
-echo "Hostname: $(hostname)" && \
-echo "Uptime: $(uptime -p)" && \
-echo "Kernel: $(uname -r)" && \
-echo "OS: $(lsb_release -d 2>/dev/null | cut -f2 || grep '^PRETTY_NAME=' /etc/os-release | cut -d= -f2 | tr -d '\"')" && \
-# Requires 'lsb_release' or /etc/os-release to be present
-echo "Memory: $(free -m | awk '/^Mem:/ {print $2 " MB"}')" && \
-echo "Memory: $(free -g | awk '/^Mem:/ {print $2 " GB"}')" && \
-echo "Disk Usage: $(df -h / | awk 'NR==2 {printf "Size: %s, Free: %s, Used: %s", $2, $4, $5}') " && \
-echo "Primary Local IP: $(hostname -I | awk '{print $1}')" '
+sinfo() {
+  echo "System Information:"
+  echo "-------------------"
+  echo "Hostname: $(hostname)"
+  echo "Uptime: $(uptime -p)"
+  echo "Kernel: $(uname -r)"
+  echo "OS: $(lsb_release -d 2>/dev/null | cut -f2 || grep '^PRETTY_NAME=' /etc/os-release | cut -d= -f2 | tr -d '"')"
+  echo "Memory: $(free -m | awk '/^Mem:/ {print $2 \" MB\"}')"
+  echo "Memory: $(free -g | awk '/^Mem:/ {print $2 \" GB\"}')"
+  echo "Disk Usage: $(df -h / | awk 'NR==2 {printf \"Size: %s, Free: %s, Used: %s\", \$2, \$4, \$5}')"
+  echo "Primary Local IP: $(hostname -I | awk '{print $1}')"
+}
+
 
 #ssh
 alias ssha='eval $(ssh-agent) && ssh-add'
