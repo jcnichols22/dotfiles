@@ -12,11 +12,12 @@ echo "-------------------" && \
 echo "Hostname: $(hostname)" && \
 echo "Uptime: $(uptime -p)" && \
 echo "Kernel: $(uname -r)" && \
-echo "OS: $(lsb_release -d | cut -f2)" && \
-echo "CPU: $(lscpu | grep 'Model name' | cut -d ':' -f2 | xargs) ($(nproc) cores)" && \
+echo "OS: $(lsb_release -d 2>/dev/null | cut -f2 || grep '^PRETTY_NAME=' /etc/os-release | cut -d= -f2 | tr -d '\"')" && \
+# Requires 'lsb_release' or /etc/os-release to be present
+echo "Memory: $(free -m | awk '/^Mem:/ {print $2 " MB"}')" && \
 echo "Memory: $(free -g | awk '/^Mem:/ {print $2 " GB"}')" && \
-echo "Disk Usage: Size: $(df -h / | awk 'NR==2 {print $2}'), Free: $(df -h / | awk 'NR==2 {print $4}'), Used: $(df -h / | awk 'NR==2 {print $5}')" && \
-echo "IPV4 Address: $(hostname -I | awk '{print $1}')" '
+echo "Disk Usage: $(df -h / | awk 'NR==2 {printf "Size: %s, Free: %s, Used: %s", $2, $4, $5}') " && \
+echo "Primary Local IP: $(hostname -I | awk '{print $1}')" '
 
 #ssh
 alias ssha='eval $(ssh-agent) && ssh-add'
