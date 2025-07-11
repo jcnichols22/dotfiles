@@ -7,7 +7,7 @@ alias cls='clear'
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y'
 
 #system information
-alias sysinfo='echo "System Information:" && \
+alias sinfo='echo "System Information:" && \
 echo "-------------------" && \
 echo "Hostname: $(hostname)" && \
 echo "Uptime: $(uptime -p)" && \
