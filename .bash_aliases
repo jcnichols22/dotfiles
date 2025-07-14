@@ -33,18 +33,20 @@ alias gc='git commit -m'
 alias gpl='git pull'
 alias gps='git push'
 alias gs='git status'
-alias pullans='/home/josh/Documents/code/Ansible'
+
 
 #tailscale
-alias tsi='curl -fsSL https://tailscale.com/install.sh | sh'
+alias tsinstall='curl -fsSL https://tailscale.com/install.sh | sh'
 alias ts='tailscale'
-alias tsu='sudo tailscale up'
-alias tsd='sudo tailscale down'
-alias tsen='sudo tailscale set --exit-node=100.89.118.43'
-alias tsud='sudo tailscale update'
+alias tsup='sudo tailscale up'
+alias tsdown='sudo tailscale down'
+alias tsenset='sudo tailscale set --exit-node=100.89.118.43'
+alias tsstatus='tailscale status'
+alias tsendown='sudo tailscale set --exit-node='
+alias tsupdate='sudo tailscale update'
 
 #ssh 
 alias spve='ssh 192.168.0.157'
 alias spve1='ssh 192.168.0.23'
-alias media='ssh 192.168.0.102'
+alias smedia='ssh 192.168.0.102'
 
