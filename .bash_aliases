@@ -14,7 +14,7 @@ sinfo() {
   echo "Uptime: $(uptime -p)"
   echo "Kernel: $(uname -r)"
   echo "OS: $(lsb_release -d 2>/dev/null | cut -f2 || grep '^PRETTY_NAME=' /etc/os-release | cut -d= -f2 | tr -d '"')"
-  echo "Memory: $(free -m | awk '/^Mem:/ {print $2 " MB"}')"
+  echo "Processor: $(lscpu | awk -F: '/Model name/ {print $2}' | xargs)"
   echo "Memory: $(free -g | awk '/^Mem:/ {print $2 " GB"}')"
   echo "Disk Usage: $(df -h / | awk 'NR==2 {printf "Size: %s, Free: %s, Used: %s", $2, $4, $5}')"
   echo "Primary Local IP: $(hostname -I | awk '{print $1}')"
@@ -41,6 +41,7 @@ alias ts='tailscale'
 alias tsup='sudo tailscale up'
 alias tsdown='sudo tailscale down'
 alias tsenset='sudo tailscale set --exit-node=100.89.118.43'
+alias tsenup='sudo tailscale set --exit-node=100.89.118.43 --exit-node-allow-lan-access=true'
 alias tsstatus='tailscale status'
 alias tsendown='sudo tailscale set --exit-node='
 alias tsupdate='sudo tailscale update'
