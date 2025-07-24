@@ -28,11 +28,11 @@ alias ssha='eval $(ssh-agent) && ssh-add'
 #git aliases
 alias g='git'
 alias ga='git add'
-alias gb='git branch'
+alias gaa='git add .'
 alias gc='git commit -m'
 alias gpl='git pull'
 alias gps='git push'
-alias gs='git status'
+alias gplr='git pull --rebase'
 
 
 #tailscale
@@ -51,3 +51,12 @@ alias spve='ssh 192.168.0.157'
 alias spve1='ssh 192.168.0.23'
 alias smedia='ssh 192.168.0.102'
 
+
+
+#docker compose
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcl='docker compose logs -f'
+alias dce='docker compose exec'
+alias dcr='docker compose restart'
+alias dcpull='docker compose pull'

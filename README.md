@@ -13,13 +13,13 @@ This repository contains personal dotfiles, including shell configuration and al
 
 The `.bash_aliases` file contains a collection of useful Bash aliases. To use these aliases:
 
-1. **Clone the repository:**
+**1. Clone the repository:**
 
 ```bash
 git clone https://github.com/jcnichols22/dotfiles.git
 ```
 
-2. **Symlink or copy the `.bash_aliases` file to your home directory:**
+**2. Symlink or copy the `.bash_aliases` file to your home directory:**
 
 ```bash
 ln -s /path/to/dotfiles/.bash_aliases ~/.bash_aliases
@@ -31,7 +31,7 @@ Or, for a quick copy:
 cp /path/to/dotfiles/.bash_aliases ~/.bash_aliases
 ```
 
-3. **Source your `.bashrc` or `.bash_aliases` to activate the aliases:**
+**3. Source your `.bashrc` or `.bash_aliases` to activate the aliases:**
 
 ```bash
 source ~/.bashrc
