@@ -63,8 +63,6 @@ alias dcpull='docker compose pull'
 
 
 #nixos
-
-
 alias nxswitch='sudo nixos-rebuild switch --flake .#nixos'
 alias nxbuild='sudo nixos-rebuild build --flake .#nixos'
 alias nxupgrade='sudo nixos-rebuild switch --upgrade --flake .#nixos'
