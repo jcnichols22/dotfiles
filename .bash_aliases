@@ -60,3 +60,14 @@ alias dcl='docker compose logs -f'
 alias dce='docker compose exec'
 alias dcr='docker compose restart'
 alias dcpull='docker compose pull'
+
+
+#nixos
+
+
+alias nxswitch='sudo nixos-rebuild switch --flake .#nixos'
+alias nxbuild='sudo nixos-rebuild build --flake .#nixos'
+alias nxupgrade='sudo nixos-rebuild switch --upgrade --flake .#nixos'
+alias nxclean='sudo nix-collect-garbage -d'
+
+
